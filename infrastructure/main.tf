@@ -3,7 +3,6 @@ provider "aws" {
   profile = var.profile
 }
 
-/*
 resource "aws_security_group" "EC2_SG" {
 
   name  = "EC2_SecGrp"
@@ -50,8 +49,6 @@ resource "aws_instance" "web_server_suma" {
             EOF
 }
 
- */
-
 resource "aws_s3_bucket" "avatars-suma" {
   bucket = "grocerymate-avatars-suma"
 
@@ -59,4 +56,24 @@ resource "aws_s3_bucket" "avatars-suma" {
     Name = "grocerymate-avatars-suma"
     Environment = "Dev"
   }
+}
+resource "aws_sns_topic" "topic" {
+  name = "WebServer-CPU_Utilization_alert"
+}
+
+####################################################
+# Create a cloudwatch alarm for EC2 instances and alarm_actions to SNS topic
+####################################################
+resource "aws_cloudwatch_metric_alarm" "CPU_Utilisation" {
+  alarm_name                = "terraform-test-CPUUtilisation"
+  comparison_operator       = "GreaterThanOrEqualToThreshold"
+  evaluation_periods        = "2"
+  metric_name               = "CPUUtilization"
+  namespace                 = "AWS/EC2"
+  period                    = "120"
+  statistic                 = "Average"
+  threshold                 = "10"
+  alarm_description         = "This metric monitors ec2 cpu utilization"
+  dimensions                = {       InstanceId = aws_instance.web_server_suma.id    }
+  insufficient_data_actions = []
 }

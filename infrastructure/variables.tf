@@ -1,7 +1,7 @@
 variable "instance_name" {
   description = "Name of the EC2 instance"
   type = string
-  default = "Suma_AWS"
+  default = "GroceryStore"
 }
 variable "instance_type" {
   description = "EC instance type"
@@ -27,5 +27,11 @@ variable "profile" {
 variable "ami" {
   description = "AWS AMI"
   type = string
-  default = "ami-06ee6255945a96aba"
+  default = "ami-08aa372c213609089"
+}
+
+variable "email_address" {
+  description = "Email Address"
+  type = string
+  default = "sumanagabhushan@gmail.com"
 }
