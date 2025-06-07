@@ -26,9 +26,15 @@ resource "aws_security_group" "EC2_SG" {
     protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "all"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
 
-resource "aws_instance" "web_server_suma" {
+resource "aws_instance" "grocerystore_application" {
   ami = var.ami
   instance_type = var.instance_type
   key_name = var.key_pair_name
@@ -49,11 +55,11 @@ resource "aws_instance" "web_server_suma" {
             EOF
 }
 
-resource "aws_s3_bucket" "avatars-suma" {
-  bucket = "grocerymate-avatars-suma"
+resource "aws_s3_bucket" "avatars-users" {
+  bucket = "grocerymate-avatars-users"
 
   tags = {
-    Name = "grocerymate-avatars-suma"
+    Name = "grocerymate-avatars-user"
     Environment = "Dev"
   }
 }
@@ -74,6 +80,6 @@ resource "aws_cloudwatch_metric_alarm" "CPU_Utilisation" {
   statistic                 = "Average"
   threshold                 = "10"
   alarm_description         = "This metric monitors ec2 cpu utilization"
-  dimensions                = {       InstanceId = aws_instance.web_server_suma.id    }
+  dimensions                = {       InstanceId = aws_instance.grocerystore_application.id    }
   insufficient_data_actions = []
 }
