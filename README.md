@@ -18,12 +18,6 @@ This project showcases a containerized, cloud-native grocery web application dep
 
 ## 🧱 Architecture Overview
 
-```
-User → ALB → EC2 (Dockerized App) → RDS (PostgreSQL)
-                         ↓
-                        S3 (Static Assets)
-```
-
 * The application is containerized using Docker and deployed on EC2 instances.
 * Traffic is routed through an Application Load Balancer for high availability.
 * A PostgreSQL database (RDS) handles backend data storage.
@@ -42,13 +36,14 @@ User → ALB → EC2 (Dockerized App) → RDS (PostgreSQL)
    * Install Docker and Docker Compose (if needed)
    * Clone the repository:
 
-     ```bash
-     git clone --branch version2 https://github.com/AlejandroRomanIbanez/AWS_grocery.git && cd AWS_grocery
-     ```
+    ```sh
+git clone --branch version2 https://github.com/AlejandroRomanIbanez/AWS_grocery.git && cd AWS_grocery
+```
+
+
 
 3. **Configure PostgreSQL**
-
-   ```bash
+  ```sh
    psql -U postgres -c "CREATE DATABASE grocerymate_db;"
    psql -U postgres -c "CREATE USER grocery_user WITH ENCRYPTED PASSWORD '<your_secure_password>';"
    psql -U postgres -c "ALTER USER grocery_user WITH SUPERUSER;"
@@ -56,20 +51,20 @@ User → ALB → EC2 (Dockerized App) → RDS (PostgreSQL)
 
 4. **Populate the Database**
 
-   ```bash
+   ```sh
    psql -U grocery_user -d grocerymate_db -f app/sqlite_dump_clean.sql
    ```
 
    * Verify with:
 
-     ```bash
+     ```sh
      psql -U grocery_user -d grocerymate_db -c "SELECT * FROM users;"
      psql -U grocery_user -d grocerymate_db -c "SELECT * FROM products;"
      ```
 
 5. **Set Up Python Environment**
 
-   ```bash
+   ```sh
    cd backend
    pip install -r requirements.txt
    ```
@@ -78,12 +73,12 @@ User → ALB → EC2 (Dockerized App) → RDS (PostgreSQL)
 
    * Create a `.env` file:
 
-     ```bash
+     ```sh
      touch .env
      ```
    * Generate a secure JWT key:
 
-     ```bash
+     ```sh
      python3 -c "import secrets; print(secrets.token_hex(32))"
      ```
    * Add to `.env`:
@@ -99,35 +94,36 @@ User → ALB → EC2 (Dockerized App) → RDS (PostgreSQL)
 
 7. **Start the Application**
 
-   ```bash
+   ```sh
    python3 run.py
    ```
 
-## 🔍 Features
+DevOps Features & Cloud Skills Demonstrated
 
-* 🐳 Dockerized web app
-* ☁️ AWS-native deployment (EC2, RDS, S3, ALB)
-* ⚙️ Infrastructure as Code with Terraform
-* 🧱 Modular and scalable architecture
-* 🔐 Secure IAM roles and security groups
-* 🛡️ User Authentication, JWT & Session Management
-* 🛍️ Shopping Basket & Checkout Flow
-* 🔎 Product Search and Favorites
+🐳 Dockerized deployment on EC2
+☁️ AWS-native architecture with modular design
+⚙️ Full Infrastructure as Code using Terraform
+🔐 Secure IAM setup and fine-grained access control
+📦 PostgreSQL provisioning and initialization on Amazon RDS
+🌐 Load balancing with ALB for high availability
+📁 Static asset hosting with S3
+🔒 Custom VPC, public/private subnets, security groups, and routing
 
-## 🧑‍💻 Tech Stack
+🧑‍💻 Tooling & Technologies
 
-* **Frontend / Backend**: Python, JavaScript
-* **Infrastructure**: Terraform, AWS CLI
-* **Database**: PostgreSQL (Amazon RDS)
-* **Containerization**: Docker
-* **OS**: Amazon Linux 2
+Terraform – AWS resource provisioning and state management
+Docker – App containerization and deployment
+PostgreSQL (RDS) – Managed relational database
+Amazon EC2 – Compute environment
+Amazon S3 – Object storage for static content
+ALB, IAM, VPC – Load balancing, security, and networking
 
-## 🧠 Lessons Learned
+🧠 Lessons Learned
 
-* Built and deployed a full-stack e-commerce platform on AWS
-* Learned how to manage infrastructure using Terraform
-* Gained hands-on experience with RDS, ALB, and Docker on EC2
-* Strengthened troubleshooting and DevOps automation skills
+Built and deployed a reproducible cloud infrastructure with Terraform
+Automated deployment of a containerized application using AWS EC2
+Implemented secure, scalable cloud architecture using best practices
+Deepened understanding of VPC networking, IAM roles, and resource security
 
 ## 👤 Author
 
