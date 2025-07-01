@@ -40,10 +40,8 @@ This project showcases a containerized, cloud-native grocery web application dep
     git clone --branch version2 https://github.com/AlejandroRomanIbanez/AWS_grocery.git && cd AWS_grocery
     ```
 
-
-
 3. **Configure PostgreSQL**
-  ```sh
+    ```sh
    psql -U postgres -c "CREATE DATABASE grocerymate_db;"
    psql -U postgres -c "CREATE USER grocery_user WITH ENCRYPTED PASSWORD '<your_secure_password>';"
    psql -U postgres -c "ALTER USER grocery_user WITH SUPERUSER;"
