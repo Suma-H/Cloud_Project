@@ -1,6 +1,6 @@
 # 🛒 Cloud-Native Grocery Web App
 
-**DevOps / Cloud Engineering Capstone – September**
+** DevOps / Cloud Engineering Capstone **
 
 ## 📌 Project Overview
 
