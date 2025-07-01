@@ -98,14 +98,14 @@ This project showcases a containerized, cloud-native grocery web application dep
 
 DevOps Features & Cloud Skills Demonstrated
 
-🐳 Dockerized deployment on EC2
-☁️ AWS-native architecture with modular design
-⚙️ Full Infrastructure as Code using Terraform
-🔐 Secure IAM setup and fine-grained access control
-📦 PostgreSQL provisioning and initialization on Amazon RDS
-🌐 Load balancing with ALB for high availability
-📁 Static asset hosting with S3
-🔒 Custom VPC, public/private subnets, security groups, and routing
+* 🐳 Dockerized deployment on EC2
+* ☁️ AWS-native architecture with modular design
+* ⚙️ Full Infrastructure as Code using Terraform
+* 🔐 Secure IAM setup and fine-grained access control
+* 📦 PostgreSQL provisioning and initialization on Amazon RDS
+* 🌐 Load balancing with ALB for high availability
+* 📁 Static asset hosting with S3
+* 🔒 Custom VPC, public/private subnets, security groups, and routing
 
 🧑‍💻 Tooling & Technologies
 
