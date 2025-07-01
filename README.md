@@ -37,8 +37,8 @@ This project showcases a containerized, cloud-native grocery web application dep
    * Clone the repository:
 
     ```sh
-git clone --branch version2 https://github.com/AlejandroRomanIbanez/AWS_grocery.git && cd AWS_grocery
-```
+    git clone --branch version2 https://github.com/AlejandroRomanIbanez/AWS_grocery.git && cd AWS_grocery
+    ```
 
 
 
