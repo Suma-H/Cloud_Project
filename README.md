@@ -109,24 +109,24 @@ DevOps Features & Cloud Skills Demonstrated
 
 🧑‍💻 Tooling & Technologies
 
-Terraform – AWS resource provisioning and state management
-Docker – App containerization and deployment
-PostgreSQL (RDS) – Managed relational database
-Amazon EC2 – Compute environment
-Amazon S3 – Object storage for static content
-ALB, IAM, VPC – Load balancing, security, and networking
+* Terraform – AWS resource provisioning and state management
+* Docker – App containerization and deployment
+* PostgreSQL (RDS) – Managed relational database
+* Amazon EC2 – Compute environment
+* Amazon S3 – Object storage for static content
+* ALB, IAM, VPC – Load balancing, security, and networking
 
 🧠 Lessons Learned
 
-Built and deployed a reproducible cloud infrastructure with Terraform
-Automated deployment of a containerized application using AWS EC2
-Implemented secure, scalable cloud architecture using best practices
-Deepened understanding of VPC networking, IAM roles, and resource security
+* Built and deployed a reproducible cloud infrastructure with Terraform
+* Automated deployment of a containerized application using AWS EC2
+* Implemented secure, scalable cloud architecture using best practices
+* Deepened understanding of VPC networking, IAM roles, and resource security
 
 ## 👤 Author
 
 **Suma Hotti**
-[LinkedIn](https://www.linkedin.com/in/sumah)
+* [LinkedIn](https://www.linkedin.com/in/sumah)
 
 ---
 
